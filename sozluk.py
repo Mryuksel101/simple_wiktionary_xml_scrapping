@@ -11,14 +11,10 @@ searchedWord = root.find('title').text
 wordMeaningAll = root.find('.//text').text
 # 'Noun' bölümünü arıyoruz
 pattern = re.compile(r'== Noun ==(.+?)\n\n', re.DOTALL)
-match = pattern.search(wordMeaningAll)
+noun_sections = pattern.findall(wordMeaningAll)
 
-# Sonuçları alıyoruz
-if match:
-    noun_section = match.group(2)
-    print(noun_section)
-else:
-    print("Bölüm bulunamadı.")
+for i, item in enumerate(noun_sections, 1):
+    print(f"== Noun {i} ==\n{item}\n")
 
 
 
