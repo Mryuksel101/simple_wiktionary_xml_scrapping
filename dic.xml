@@ -1,0 +1,49 @@
+<page>
+    <title>dictionary</title>
+    <ns>0</ns>
+    <id>892</id>
+    <revision>
+        <id>495536</id>
+        <parentid>482044</parentid>
+        <timestamp>2023-05-14T21:58:58Z</timestamp>
+        <contributor>
+        <username>OmegaFallon</username>
+        <id>44439</id>
+        </contributor>
+        <model>wikitext</model>
+        <format>text/x-wiki</format>
+        <text bytes="1078" xml:space="preserve">{{wikipedia}}
+
+        === Pronunciation ===
+        * {{UK}} {{IPA|/ˈdɪkʃən(ə)ri/}}, {{SAMPA|/&quot;dIkS@n(@)ri/}}
+        * {{US}} {{enPR|dĭk'shə-nĕr&quot;ē}}, {{IPA|/ˈdɪkʃənˌɛri/}}, {{SAMPA|/&quot;dIkS@n%Eri/}}
+        * {{audio|en-uk-dictionary.ogg|Audio (UK)}}
+        * {{audio|en-us-dictionary.ogg|Audio (US)}}
+
+        == Noun ==
+        {{noun|2=dictionaries}}
+        [[File:Blacks-Law-Dictionary.jpg|thumb|A '''dictionary'''.]]
+        [[File:BilingualDictionaries.jpg|thumb|Some [[bilingual]] '''dictionaries'''.]]
+        # {{countable}} A '''dictionary''' is a [[book]] that tells you what [[word]]s mean, and how to [[spell]] them. A lot of '''dictionaries''' will also tell you about [[etymology]] (where words come from) and [[pronunciation]] (how to speak them). {{syn|lexicon|wordbook}}
+        #: ''You are reading an online '''dictionary''' right now.''
+        #: ''The words in a printed '''dictionary''' are in [[alphabetical order]].''
+        #: ''I looked up the '''dictionary''' to find the meaning of the word [[business]].''
+
+        == Noun ==
+        {{noun}}
+        # {{cu noun}} A '''deviation''' is [[difference]] or movement away from a [[standard]].
+        #: ''They insist that there must be no '''deviation''' from that style.''
+        #: ''Any '''deviations''' from the contract would have to be agreed by both parties.''
+        # {{countable}}; {{context|statistics}} A '''deviation''' is the difference between a number and the [[average]] of a set of [[value]]s.
+
+        === Related words ===
+        * [[definition]]
+        * [[diction]]
+        * [[thesaurus]]
+
+        === See also ===
+        * [[reference]]
+        [[Category:Literature]]</text>
+        <sha1>gr3p7lzn2rgtmz03vhwkzx9y4vb5ezf</sha1>
+    </revision>
+</page> 
