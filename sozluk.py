@@ -14,17 +14,19 @@
 }
 
 {
-    word: ....
     [
-        [
-            {   
-                des : ...
-                sentences : [
-                
-                ]
-            }
-        ]
-        type: .......
+        {
+            word: ....
+            [
+                {   
+                    des : ...
+                    sentences : [
+                    
+                    ]
+                }
+            ]
+            type: .......
+        }
     ]
 }
 
@@ -47,9 +49,15 @@ with open('dic.xml', 'r') as file:
 tree = ET.ElementTree(ET.fromstring(xml_data))
 root = tree.getroot()
 
+wordMeaning = {}
+
 word = root.find('title').text
 text = root.find('.//text').text
 
+wordMeaning["item"] = []
+wordMeaning["item"].append({})
+
+wordMeaning["item"][0]["word"] = word
 # 'Noun' bölümünü
 prepositionSectionPattern =  re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
 desPattern = re.compile(r'#(.+?)\n', re.DOTALL)
@@ -57,7 +65,10 @@ sentencesPattern = re.compile(r'#:(.+?)\n', re.DOTALL)
 des = desPattern.search(text).group(1)
 sentences = sentencesPattern.findall(text)
 prepositionSection = prepositionSectionPattern.search(text).group(1)
-print(prepositionSection)
+
+wordMeaning["item"][0]["silkanka"] = {}
+print(wordMeaning)
+
 
 
 
