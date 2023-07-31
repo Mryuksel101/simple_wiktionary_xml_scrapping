@@ -33,6 +33,9 @@ for i, item in enumerate(noun_sections, 1):
 
 pattern = re.compile(r'== Noun ==(.+?)\n\n', re.DOTALL)
 noun_sections = pattern.findall(text)
+
+for i in sentences:
+    print(i)
 """ 
 
 import xml.etree.ElementTree as ET
@@ -48,13 +51,13 @@ word = root.find('title').text
 text = root.find('.//text').text
 
 # 'Noun' bölümünü
+prepositionSectionPattern =  re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
 desPattern = re.compile(r'#(.+?)\n', re.DOTALL)
 sentencesPattern = re.compile(r'#:(.+?)\n', re.DOTALL)
 des = desPattern.search(text).group(1)
 sentences = sentencesPattern.findall(text)
-
-for i in sentences:
-    print(i)
+prepositionSection = prepositionSectionPattern.search(text).group(1)
+print(prepositionSection)
 
 
 
