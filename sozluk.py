@@ -14,14 +14,20 @@
 }
 
 {
-    [
+  silitem:  [
         {
             word: ....
-            [
+            silkanka: [
                 {   
                     des : ...
                     sentences : [
                     
+                    ]
+                }
+                    {   
+                    des : ...
+                    sentences : [
+
                     ]
                 }
             ]
@@ -38,10 +44,27 @@ noun_sections = pattern.findall(text)
 
 for i in sentences:
     print(i)
+
+if "== Preposition ==" in text:
+
+wordMeaning["silitem"][0]["silkanka"].appned({})
 """ 
 
 import xml.etree.ElementTree as ET
 import re
+
+def prepositionSectionParse(value, word, wordMeaning):
+    if "== Preposition ==" in value:
+        print("metinde prepositionSectionParse bulundu")
+        prepositionSectionPattern = re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
+        prepositionText = prepositionSectionPattern.search(value).group(1)
+        wordMeaning["silitem"][0]["type"] = "Preposition"
+        wordMeaning["silitem"][0]["silkanka"].append({})
+        
+
+    else:
+        print("metinde prepositionSectionParse bulunmadı")
+
 with open('dic.xml', 'r') as file:
     xml_data = file.read()
 
@@ -54,10 +77,12 @@ wordMeaning = {}
 word = root.find('title').text
 text = root.find('.//text').text
 
-wordMeaning["item"] = []
-wordMeaning["item"].append({})
+wordMeaning["silitem"] = []
+wordMeaning["silitem"].append({})
 
-wordMeaning["item"][0]["word"] = word
+wordMeaning["silitem"][0]["word"] = word
+wordMeaning["silitem"][0]["silkanka"]=[]
+
 # 'Noun' bölümünü
 prepositionSectionPattern =  re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
 desPattern = re.compile(r'#(.+?)\n', re.DOTALL)
@@ -66,10 +91,8 @@ des = desPattern.search(text).group(1)
 sentences = sentencesPattern.findall(text)
 prepositionSection = prepositionSectionPattern.search(text).group(1)
 
-wordMeaning["item"][0]["silkanka"] = {}
+prepositionSectionParse(text, word, wordMeaning)
 print(wordMeaning)
-
-
 
 
 
