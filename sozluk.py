@@ -74,10 +74,12 @@ def prepositionSectionParse(value, word, wordMeaning):
         print("metinde prepositionSectionParse bulundu")
         prepositionSectionPattern = re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
         prepositionText = prepositionSectionPattern.search(value).group(1)
-        prepositionSectionItemsPattern = re.compile(r'#(.+?)\n', re.DOTALL)
+        prepositionSectionItemsPattern = re.compile(r'#.*?(?=\n|$)', re.DOTALL)
         items = prepositionSectionItemsPattern.findall(prepositionText)
+        #print(items)
         for i in items:
             if ":" in i:
+                #print("var", i)
                 wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(i)
             else:
                 #definition kısmına ekle çıkan şeyi
@@ -89,7 +91,7 @@ def prepositionSectionParse(value, word, wordMeaning):
                     map'ın "sentences" key'i doldurulmalı
 
                 """ 
-                print("yok", i)
+                #print("yok", i)
                 wordMeaning["words"][0]["definitions"][-1]["properties"].append({})
                 wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["definition"] = i
                 wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["sentences"] = []
