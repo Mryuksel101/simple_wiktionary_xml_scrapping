@@ -1,5 +1,5 @@
 import xml.etree.ElementTree as ET
-with open("C:/Users/Mustafa Yüksel/Desktop/python/dic.xml", "r") as file:
+with open("C:/Users/Mustafa Yüksel/definitionktop/python/dic.xml", "r") as file:
     xml_text = file.read()
 root = ET.fromstring(xml_text)
 

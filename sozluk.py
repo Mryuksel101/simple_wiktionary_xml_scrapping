@@ -3,7 +3,7 @@
     word: ....
     [
         {   
-            des : ....
+            definition : ....
             sentences :
                 [         
                     
@@ -14,24 +14,37 @@
 }
 
 {
-  silitem:  [
+  words:  [
         {
             word: ....
-            silkanka: [
-                {   
-                    des : ...
-                    sentences : [
+                
+                definitions: [
+                    {   bizde aynı partOfSpeech'in birden fazla tanımları ve cümle örnekleri olabilir
+                
+                        properties [
+                            property : {
+                                definition : ...
+                                sentences : [
+                                
+                                ]
+                            }
+                        ]
+                        partOfSpeech: .......
+                    }
                     
-                    ]
-                }
-                    {   
-                    des : ...
-                    sentences : [
-
-                    ]
-                }
+                    }
+                        properties [
+                            {
+                                definition : ...
+                                sentences : [
+                                
+                                ]
+                            }
+                        ]
+                        partOfSpeech: .......
+                    }
+                ]
             ]
-            type: .......
         }
     ]
 }
@@ -47,7 +60,7 @@ for i in sentences:
 
 if "== Preposition ==" in text:
 
-wordMeaning["silitem"][0]["silkanka"].appned({})
+wordMeaning["words"][0]["definitions"].appned({})
 """ 
 
 import xml.etree.ElementTree as ET
@@ -55,33 +68,33 @@ import re
 
 def prepositionSectionParse(value, word, wordMeaning):
     if "== Preposition ==" in value:
+        wordMeaning["words"][0]["definitions"].append({})
+        wordMeaning["words"][0]["definitions"][-1]["partOfSpeech"] = "Preposition"
+        wordMeaning["words"][0]["definitions"][-1]["properties"] = []
         print("metinde prepositionSectionParse bulundu")
         prepositionSectionPattern = re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
         prepositionText = prepositionSectionPattern.search(value).group(1)
-        wordMeaning["silitem"][0]["type"] = "Preposition"
-        
-
         prepositionSectionItemsPattern = re.compile(r'#(.+?)\n', re.DOTALL)
         items = prepositionSectionItemsPattern.findall(prepositionText)
         for i in items:
             if ":" in i:
-                wordMeaning["silitem"][0]["silkanka"][-1]["sentences"].append(i)
+                wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(i)
             else:
-                #des kısmına ekle çıkan şeyi
+                #definition kısmına ekle çıkan şeyi
                 """ 
                 1. item ({{P+NP}}, ''after the noun'' & {{P-comp}}) If A is '''above''' B, A is [[higher]] than or [[before]] B, but not touching B.
                 2. item : ''In a newspaper, the title of a story is usually '''above''' the story.''
-                eğer başlangıçta ":" yoksa diziye yeni bir map eklenmeli
-                    map'ın "des" key'i doldurulmalı
+                eğer başlangıçta ":" yoksa diziye yeni bir property map eklenmeli
+                    map'ın "definition" key'i doldurulmalı
                     map'ın "sentences" key'i doldurulmalı
 
                 """ 
                 print("yok", i)
-                wordMeaning["silitem"][0]["silkanka"].append({})
-                wordMeaning["silitem"][0]["silkanka"][-1]["des"] = i
-                wordMeaning["silitem"][0]["silkanka"][-1]["sentences"] = []
+                wordMeaning["words"][0]["definitions"][-1]["properties"].append({})
+                wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["definition"] = i
+                wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["sentences"] = []
 
-
+        
 
 
 
@@ -100,17 +113,17 @@ wordMeaning = {}
 word = root.find('title').text
 text = root.find('.//text').text
 
-wordMeaning["silitem"] = []
-wordMeaning["silitem"].append({})
+wordMeaning["words"] = []
+wordMeaning["words"].append({})
 
-wordMeaning["silitem"][0]["word"] = word
-wordMeaning["silitem"][0]["silkanka"]=[]
+wordMeaning["words"][0]["word"] = word
+wordMeaning["words"][0]["definitions"]=[]
 
 # 'Noun' bölümünü
 prepositionSectionPattern =  re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
-desPattern = re.compile(r'#(.+?)\n', re.DOTALL)
+definitionPattern = re.compile(r'#(.+?)\n', re.DOTALL)
 sentencesPattern = re.compile(r'#:(.+?)\n', re.DOTALL)
-des = desPattern.search(text).group(1)
+definition = definitionPattern.search(text).group(1)
 sentences = sentencesPattern.findall(text)
 prepositionSection = prepositionSectionPattern.search(text).group(1)
 
