@@ -59,8 +59,31 @@ def prepositionSectionParse(value, word, wordMeaning):
         prepositionSectionPattern = re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
         prepositionText = prepositionSectionPattern.search(value).group(1)
         wordMeaning["silitem"][0]["type"] = "Preposition"
-        wordMeaning["silitem"][0]["silkanka"].append({})
         
+
+        prepositionSectionItemsPattern = re.compile(r'#(.+?)\n', re.DOTALL)
+        items = prepositionSectionItemsPattern.findall(prepositionText)
+        for i in items:
+            if ":" in i:
+                wordMeaning["silitem"][0]["silkanka"][-1]["sentences"].append(i)
+            else:
+                #des kısmına ekle çıkan şeyi
+                """ 
+                1. item ({{P+NP}}, ''after the noun'' & {{P-comp}}) If A is '''above''' B, A is [[higher]] than or [[before]] B, but not touching B.
+                2. item : ''In a newspaper, the title of a story is usually '''above''' the story.''
+                eğer başlangıçta ":" yoksa diziye yeni bir map eklenmeli
+                    map'ın "des" key'i doldurulmalı
+                    map'ın "sentences" key'i doldurulmalı
+
+                """ 
+                print("yok", i)
+                wordMeaning["silitem"][0]["silkanka"].append({})
+                wordMeaning["silitem"][0]["silkanka"][-1]["des"] = i
+                wordMeaning["silitem"][0]["silkanka"][-1]["sentences"] = []
+
+
+
+
 
     else:
         print("metinde prepositionSectionParse bulunmadı")
@@ -92,8 +115,8 @@ sentences = sentencesPattern.findall(text)
 prepositionSection = prepositionSectionPattern.search(text).group(1)
 
 prepositionSectionParse(text, word, wordMeaning)
-print(wordMeaning)
 
+print(wordMeaning)
 
 
 
