@@ -66,13 +66,14 @@ wordMeaning["words"][0]["definitions"].appned({})
 import xml.etree.ElementTree as ET
 import re
 
-def prepositionSectionParse(value, word, wordMeaning):
-    if "== Preposition ==" in value:
+def sectionParse(value, word: str, wordMeaning: str, sectionName: str):
+    section_name = "== " + sectionName + " =="
+    if section_name in value:
         wordMeaning["words"][0]["definitions"].append({})
-        wordMeaning["words"][0]["definitions"][-1]["partOfSpeech"] = "Preposition"
+        wordMeaning["words"][0]["definitions"][-1]["partOfSpeech"] = sectionName
         wordMeaning["words"][0]["definitions"][-1]["properties"] = []
-        print("metinde prepositionSectionParse bulundu")
-        prepositionSectionPattern = re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
+        print("found {} in words".format(sectionName)) 
+        prepositionSectionPattern = re.compile(f'== {sectionName} ==(.+?)\n\n', re.DOTALL)
         prepositionText = prepositionSectionPattern.search(value).group(1)
         prepositionSectionItemsPattern = re.compile(r'#.*?(?=\n|$)', re.DOTALL)
         items = prepositionSectionItemsPattern.findall(prepositionText)
@@ -101,7 +102,7 @@ def prepositionSectionParse(value, word, wordMeaning):
 
 
     else:
-        print("metinde prepositionSectionParse bulunmadı")
+        print("nor founds {} in words".format(sectionName)) 
 
 with open('dic.xml', 'r') as file:
     xml_data = file.read()
@@ -129,7 +130,10 @@ definition = definitionPattern.search(text).group(1)
 sentences = sentencesPattern.findall(text)
 prepositionSection = prepositionSectionPattern.search(text).group(1)
 
-prepositionSectionParse(text, word, wordMeaning)
+sectionParse(text, word, wordMeaning, "Preposition")
+sectionParse(text, word, wordMeaning, "Noun")
+sectionParse(text, word, wordMeaning, "Subordinator")
+sectionParse(text, word, wordMeaning, "Verb")
 
 print(wordMeaning)
 
