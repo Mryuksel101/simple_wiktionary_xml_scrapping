@@ -81,7 +81,8 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
         for i in items:
             if ":" in i:
                 #print("var", i)
-                dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(i)
+                parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parce
+                dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
             else:
                 #definition kısmına ekle çıkan şeyi
                 """ 
@@ -93,8 +94,9 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
 
                 """ 
                 #print("yok", i)
+                parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parce
                 dictionary["words"][0]["definitions"][-1]["properties"].append({})
-                dictionary["words"][0]["definitions"][-1]["properties"][-1]["definition"] = i
+                dictionary["words"][0]["definitions"][-1]["properties"][-1]["definition"] = parsedText
                 dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"] = []
 
         
@@ -124,11 +126,11 @@ dictionary["words"][0]["definitions"]=[]
 
 
 sectionParse(text, word, dictionary, "Preposition")
-sectionParse(text, word, dictionary, "Noun")
-sectionParse(text, word, dictionary, "Subordinator")
-sectionParse(text, word, dictionary, "Verb")
-sectionParse(text, word, dictionary, "Determiner")
-sectionParse(text, word, dictionary, "Adjective")
+# sectionParse(text, word, dictionary, "Noun")
+# sectionParse(text, word, dictionary, "Subordinator")
+# sectionParse(text, word, dictionary, "Verb")
+# sectionParse(text, word, dictionary, "Determiner")
+# sectionParse(text, word, dictionary, "Adjective")
 
 print(dictionary)
 
