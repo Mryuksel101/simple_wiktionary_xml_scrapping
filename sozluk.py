@@ -69,6 +69,7 @@ import re
 def sectionParse(value, word: str, dictionary: str, sectionName: str):
     print("f sectionParse fonksiyonumuz açıldıı. kelimemiz:" + word)
     section_name = "== " + sectionName + " =="
+    value = value + "\n\n"
     if section_name in value:
         dictionary["words"][-1]["definitions"].append({})
         dictionary["words"][-1]["definitions"][-1]["partOfSpeech"] = sectionName
@@ -107,7 +108,7 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
     else:
         print("nor founds {} in words".format(sectionName)) 
 
-with open('dic.xml', 'r',  encoding='utf-8') as file:
+with open('simplewiktionary-20230701-pages-articles-multistream.xml', 'r',  encoding='utf-8') as file:
     xml_data = file.read()
 
 # XML metnini ayrıştırma

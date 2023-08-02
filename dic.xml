@@ -255,5 +255,26 @@
             <sha1>m1qyubyvstajgemrj2ii1nks0dtj31t</sha1>
         </revision>
   </page>
-
+  <page>
+    <title>professed</title>
+    <ns>0</ns>
+    <id>57895</id>
+    <revision>
+      <id>501853</id>
+      <timestamp>2023-07-01T04:43:03Z</timestamp>
+      <contributor>
+        <username>Minorax</username>
+        <id>27347</id>
+      </contributor>
+      <comment>Creating past tense and participle from [[profess]] ([[User talk:Conrad.Irwin/creation.js|Accelerated]])</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="73" xml:space="preserve">== Verb ==
+        {{verb|profess|es}}
+        # {{past tense and participle of|profess}}
+        #: Naber panpaaaaa
+        </text>
+      <sha1>rapalbi10hwe9lvfzlms8mps1k44cb5</sha1>
+    </revision>
+  </page>
 </mediawiki>
