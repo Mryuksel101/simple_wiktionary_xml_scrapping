@@ -126,11 +126,11 @@ dictionary["words"][0]["definitions"]=[]
 
 
 sectionParse(text, word, dictionary, "Preposition")
-# sectionParse(text, word, dictionary, "Noun")
-# sectionParse(text, word, dictionary, "Subordinator")
-# sectionParse(text, word, dictionary, "Verb")
-# sectionParse(text, word, dictionary, "Determiner")
-# sectionParse(text, word, dictionary, "Adjective")
+sectionParse(text, word, dictionary, "Noun")
+sectionParse(text, word, dictionary, "Subordinator")
+sectionParse(text, word, dictionary, "Verb")
+sectionParse(text, word, dictionary, "Determiner")
+sectionParse(text, word, dictionary, "Adjective")
 
 print(dictionary)
 
