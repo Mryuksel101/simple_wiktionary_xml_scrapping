@@ -67,11 +67,12 @@ import xml.etree.ElementTree as ET
 import re
 
 def sectionParse(value, word: str, dictionary: str, sectionName: str):
+    print("f sectionParse fonksiyonumuz açıldıı. kelimemiz:" + word)
     section_name = "== " + sectionName + " =="
     if section_name in value:
-        dictionary["words"][0]["definitions"].append({})
-        dictionary["words"][0]["definitions"][-1]["partOfSpeech"] = sectionName
-        dictionary["words"][0]["definitions"][-1]["properties"] = []
+        dictionary["words"][-1]["definitions"].append({})
+        dictionary["words"][-1]["definitions"][-1]["partOfSpeech"] = sectionName
+        dictionary["words"][-1]["definitions"][-1]["properties"] = []
         print("found {} in words".format(sectionName)) 
         prepositionSectionPattern = re.compile(f'== {sectionName} ==(.+?)\n\n', re.DOTALL)
         prepositionText = prepositionSectionPattern.search(value).group(1)
@@ -82,7 +83,7 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
             if ":" in i:
                 #print("var", i)
                 parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parse
-                dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
+                dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
             else:
                 #definition kısmına ekle çıkan şeyi
                 """ 
@@ -95,9 +96,9 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
                 """ 
                 #print("yok", i)
                 parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parce
-                dictionary["words"][0]["definitions"][-1]["properties"].append({})
-                dictionary["words"][0]["definitions"][-1]["properties"][-1]["definition"] = parsedText
-                dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"] = []
+                dictionary["words"][-1]["definitions"][-1]["properties"].append({})
+                dictionary["words"][-1]["definitions"][-1]["properties"][-1]["definition"] = parsedText
+                dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"] = []
 
         
 
@@ -124,18 +125,19 @@ for i in textElements:
     dictionary["words"][-1]["word"] = word
     dictionary["words"][-1]["definitions"]=[]
 
+    sectionParse(text, word, dictionary, "Preposition")
+    sectionParse(text, word, dictionary, "Noun")
+    sectionParse(text, word, dictionary, "Subordinator")
+    sectionParse(text, word, dictionary, "Verb")
+    sectionParse(text, word, dictionary, "Determiner")
+    sectionParse(text, word, dictionary, "Adjective")
+
+print(dictionary)
 
 
 
 
-#sectionParse(text, word, dictionary, "Preposition")
-#sectionParse(text, word, dictionary, "Noun")
-#sectionParse(text, word, dictionary, "Subordinator")
-#sectionParse(text, word, dictionary, "Verb")
-#sectionParse(text, word, dictionary, "Determiner")
-#sectionParse(text, word, dictionary, "Adjective")
 
-#print(dictionary)
 
 
 
