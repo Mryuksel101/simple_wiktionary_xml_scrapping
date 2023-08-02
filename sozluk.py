@@ -66,8 +66,8 @@ dictionary["words"][0]["definitions"].appned({})
 import xml.etree.ElementTree as ET
 import re
 
-def sectionParse(value, word: str, dictionary: str, sectionName: str):
-    print("f sectionParse fonksiyonumuz açıldıı. kelimemiz:" + word)
+def sectionParse(value, text_element: str, dictionary: str, sectionName: str):
+    print("f sectionParse fonksiyonumuz açıldıı. kelimemiz:" + text_element)
     section_name = "== " + sectionName + " =="
     if section_name in value:
         dictionary["words"][-1]["definitions"].append({})
