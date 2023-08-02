@@ -81,7 +81,7 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
         for i in items:
             if ":" in i:
                 #print("var", i)
-                parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parce
+                parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parse
                 dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
             else:
                 #definition kısmına ekle çıkan şeyi
@@ -106,7 +106,7 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
     else:
         print("nor founds {} in words".format(sectionName)) 
 
-with open('dic.xml', 'r') as file:
+with open('dic.xml', 'r',  encoding='utf-8') as file:
     xml_data = file.read()
 
 # XML metnini ayrıştırma
@@ -114,25 +114,30 @@ tree = ET.ElementTree(ET.fromstring(xml_data))
 root = tree.getroot()
 
 dictionary = {}
-
-word = root.find('title').text
-text = root.find('.//text').text
-
 dictionary["words"] = []
-dictionary["words"].append({})
+textElements = root.findall('.//page')
+print(len(textElements))
+for i in textElements:
+    word = i.find('title').text
+    text = i.find('.//text').text
+    dictionary["words"].append({})
+    dictionary["words"][-1]["word"] = word
+    dictionary["words"][-1]["definitions"]=[]
 
-dictionary["words"][0]["word"] = word
-dictionary["words"][0]["definitions"]=[]
 
 
-sectionParse(text, word, dictionary, "Preposition")
-sectionParse(text, word, dictionary, "Noun")
-sectionParse(text, word, dictionary, "Subordinator")
-sectionParse(text, word, dictionary, "Verb")
-sectionParse(text, word, dictionary, "Determiner")
-sectionParse(text, word, dictionary, "Adjective")
 
-print(dictionary)
+
+#sectionParse(text, word, dictionary, "Preposition")
+#sectionParse(text, word, dictionary, "Noun")
+#sectionParse(text, word, dictionary, "Subordinator")
+#sectionParse(text, word, dictionary, "Verb")
+#sectionParse(text, word, dictionary, "Determiner")
+#sectionParse(text, word, dictionary, "Adjective")
+
+#print(dictionary)
+
+
 
 
 
