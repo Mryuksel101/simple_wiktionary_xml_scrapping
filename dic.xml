@@ -1,280 +1,126 @@
 <mediawiki>
     <page>
-        <title>dictionary</title>
-        <ns>0</ns>
-        <id>892</id>
-        <revision>
-            <id>495536</id>
-            <parentid>482044</parentid>
-            <timestamp>2023-05-14T21:58:58Z</timestamp>
-            <contributor>
-            <username>OmegaFallon</username>
-            <id>44439</id>
-            </contributor>
-            <model>wikitext</model>
-            <format>text/x-wiki</format>
-            <text bytes="1078" xml:space="preserve">{{wikipedia}}
-
-            === Pronunciation ===
-            * {{UK}} {{IPA|/ˈdɪkʃən(ə)ri/}}, {{SAMPA|/&quot;dIkS@n(@)ri/}}
-            * {{US}} {{enPR|dĭk'shə-nĕr&quot;ē}}, {{IPA|/ˈdɪkʃənˌɛri/}}, {{SAMPA|/&quot;dIkS@n%Eri/}}
-            * {{audio|en-uk-dictionary.ogg|Audio (UK)}}
-            * {{audio|en-us-dictionary.ogg|Audio (US)}}
-
-            == Noun ==
-            {{noun|2=dictionaries}}
-            [[File:Blacks-Law-Dictionary.jpg|thumb|A '''dictionary'''.]]
-            [[File:BilingualDictionaries.jpg|thumb|Some [[bilingual]] '''dictionaries'''.]]
-            # {{countable}} A '''dictionary''' is a [[book]] that tells you what [[word]]s mean, and how to [[spell]] them. A lot of '''dictionaries''' will also tell you about [[etymology]] (where words come from) and [[pronunciation]] (how to speak them). {{syn|lexicon|wordbook}}
-            #: ''You are reading an online '''dictionary''' right now.''
-            #: ''The words in a printed '''dictionary''' are in [[alphabetical order]].''
-            #: ''I looked up the '''dictionary''' to find the meaning of the word [[business]].''
-
-            == Noun ==
-            {{noun}}
-            # {{cu noun}} A '''deviation''' is [[difference]] or movement away from a [[standard]].
-            #: ''They insist that there must be no '''deviation''' from that style.''
-            #: ''Any '''deviations''' from the contract would have to be agreed by both parties.''
-            # {{countable}}; {{context|statistics}} A '''deviation''' is the difference between a number and the [[average]] of a set of [[value]]s.
-            # If a [[machine]] is '''online''', it is turned [[on]] and is ready to do work.
-            #: ''   Since the [[printer]] is back '''online''', you should be able to again [[print]] from it.''
-
-            === Related words ===
-            * [[definition]]
-            * [[diction]]
-            * [[thesaurus]]
-
-            == Preposition ==
-            {{preposition}}
-            # '''To''' shows where something goes, the [[goal]] of movement.
-            #: ''He went '''to''' her house.''
-            #: ''The train returned '''to''' the station.''
-            #: ''I went '''to''' bed but could not rest.''
-            #: ''They went '''to''' school together and played in the same soccer team.''
-            #: ''A squad car took him '''to''' hospital where he died.''
-            #: ''Many people came '''to''' me with suggestions.''
-            #: ''I wonder why you keep going '''to''' sea when you know it's dangerous.''
-            # '''To''' shows the receivers of an action or object.
-            #: ''The goods were sold '''to''' customers at the downtown store.''
-            # '''To''' shows the result of a change or process.
-            #: ''It switched from red '''to''' black.''
-            #: ''They came '''to''' the conclusion that I'm better than nothing.''
-            #: ''He fell on the play, but quickly got '''to''' his feet.''
-            #: ''He was crushed '''to''' death underneath the truck.''
-            # '''To''' shows the end or limit of something.
-            #: ''Methods have been used to overcome these problems '''to''' some degree.''
-            #: ''The class is from 1:35 '''to''' 3:25.''
-            #: ''It's just another week '''to''' the end of classes.''
-            #: ''Right now it's ten minutes '''to''' four.''
-            # '''To''' shows that one thing is touching another.
-            #: ''They stood back '''to''' back to see who was taller.''
-            # '''To''' shows how two things are connected.
-            #: ''He attached the printer '''to''' the computer.''
-            #: ''She was married '''to''' a Canadian man.''
-            #: ''She was assistant '''to''' the general manager.''
-            # '''To''' shows a belonging or relationship.
-            #: ''We don't owe anything '''to''' anyone.''
-            #: '''''To''' whom does it belong?''
-            #: ''It's a benefit '''to''' the whole school.''
-            #: ''What's the answer '''to''' this problem?''
-            #: ''I can't remember the password '''to''' this account?''
-            # '''To''' shows a comparison between two things.
-            #: ''Girls outnumber boys two '''to''' one.''
-            #: ''Older cars get fewer kilometers '''to''' a liter of gasoline.''
-            #: ''Right now you can get one Canadian dollar '''to''' $1.05 US.''
-            # '''To''' shows your feeling or opinion about something.
-            #: ''It feels good '''to''' me.''
-            #: '''''To''' their surprise, she got up and left.''
-            # '''To''' shows a timing relationship, often with a music.
-            #: ''He likes to exercise '''to''' music.''
-
-            == Subordinator ==
-            {{subordinator}}
-            # '''To''' is used to introduce infinitival constructions.
-            #: ''It's important for you '''to''' understand.''
-            #: ''She told them '''to''' be quiet.''
-            #: ''You want me '''to''' do it, but I don't have '''to'''.''
-            #: '''''To''' finish quickly, we must work fast.''
-            #: '''''To''' continue like this would be foolish.''
-            #: ''I don't know how '''to''' get there.''
-            #: ''He got the keys '''to''' open the door.''
-            #: ''It's too small '''to''' see.''
-            #: ''You are all '''to''' be here at 7:30 tomorrow morning. Do you understand?''
-            #: ''He arrived only '''to''' find that everyone had gone home.''
-
-            == Verb ==
-            {{verb2|write|writes|wrote|written|writing}}
-            # {{gerund-participle of|write}}
-            #: ''I'm '''writing''' a new book.''
-
-            === See also ===
-            * [[reference]]
-            [[Category:Literature]]</text>
-            <sha1>gr3p7lzn2rgtmz03vhwkzx9y4vb5ezf</sha1>
-        </revision>
-    </page> 
-
-    <page>
-        <title>dictionary2</title>
-        <ns>0</ns>
-        <id>892</id>
-        <revision>
-            <id>495536</id>
-            <parentid>482044</parentid>
-            <timestamp>2023-05-14T21:58:58Z</timestamp>
-            <contributor>
-            <username>OmegaFallon</username>
-            <id>44439</id>
-            </contributor>
-            <model>wikitext</model>
-            <format>text/x-wiki</format>
-            <text bytes="1078" xml:space="preserve">{{wikipedia}}
-
-            === Pronunciation ===
-            * {{UK}} {{IPA|/ˈdɪkʃən(ə)ri/}}, {{SAMPA|/&quot;dIkS@n(@)ri/}}
-            * {{US}} {{enPR|dĭk'shə-nĕr&quot;ē}}, {{IPA|/ˈdɪkʃənˌɛri/}}, {{SAMPA|/&quot;dIkS@n%Eri/}}
-            * {{audio|en-uk-dictionary.ogg|Audio (UK)}}
-            * {{audio|en-us-dictionary.ogg|Audio (US)}}
-
-            == Noun ==
-            {{noun|2=dictionaries}}
-            [[File:Blacks-Law-Dictionary.jpg|thumb|A '''dictionary'''.]]
-            [[File:BilingualDictionaries.jpg|thumb|Some [[bilingual]] '''dictionaries'''.]]
-            # {{countable}} A '''dictionary''' is a [[book]] that tells you what [[word]]s mean, and how to [[spell]] them. A lot of '''dictionaries''' will also tell you about [[etymology]] (where words come from) and [[pronunciation]] (how to speak them). {{syn|lexicon|wordbook}}
-            #: ''You are reading an online '''dictionary''' right now.''
-            #: ''The words in a printed '''dictionary''' are in [[alphabetical order]].''
-            #: ''I looked up the '''dictionary''' to find the meaning of the word [[business]].''
-
-            == Noun ==
-            {{noun}}
-            # {{cu noun}} A '''deviation''' is [[difference]] or movement away from a [[standard]].
-            #: ''They insist that there must be no '''deviation''' from that style.''
-            #: ''Any '''deviations''' from the contract would have to be agreed by both parties.''
-            # {{countable}}; {{context|statistics}} A '''deviation''' is the difference between a number and the [[average]] of a set of [[value]]s.
-            # If a [[machine]] is '''online''', it is turned [[on]] and is ready to do work.
-            #: ''   Since the [[printer]] is back '''online''', you should be able to again [[print]] from it.''
-
-            === Related words ===
-            * [[definition]]
-            * [[diction]]
-            * [[thesaurus]]
-
-            == Preposition ==
-            {{preposition}}
-            # '''To''' shows where something goes, the [[goal]] of movement.
-            #: ''He went '''to''' her house.''
-            #: ''The train returned '''to''' the station.''
-            #: ''I went '''to''' bed but could not rest.''
-            #: ''They went '''to''' school together and played in the same soccer team.''
-            #: ''A squad car took him '''to''' hospital where he died.''
-            #: ''Many people came '''to''' me with suggestions.''
-            #: ''I wonder why you keep going '''to''' sea when you know it's dangerous.''
-            # '''To''' shows the receivers of an action or object.
-            #: ''The goods were sold '''to''' customers at the downtown store.''
-            # '''To''' shows the result of a change or process.
-            #: ''It switched from red '''to''' black.''
-            #: ''They came '''to''' the conclusion that I'm better than nothing.''
-            #: ''He fell on the play, but quickly got '''to''' his feet.''
-            #: ''He was crushed '''to''' death underneath the truck.''
-            # '''To''' shows the end or limit of something.
-            #: ''Methods have been used to overcome these problems '''to''' some degree.''
-            #: ''The class is from 1:35 '''to''' 3:25.''
-            #: ''It's just another week '''to''' the end of classes.''
-            #: ''Right now it's ten minutes '''to''' four.''
-            # '''To''' shows that one thing is touching another.
-            #: ''They stood back '''to''' back to see who was taller.''
-            # '''To''' shows how two things are connected.
-            #: ''He attached the printer '''to''' the computer.''
-            #: ''She was married '''to''' a Canadian man.''
-            #: ''She was assistant '''to''' the general manager.''
-            # '''To''' shows a belonging or relationship.
-            #: ''We don't owe anything '''to''' anyone.''
-            #: '''''To''' whom does it belong?''
-            #: ''It's a benefit '''to''' the whole school.''
-            #: ''What's the answer '''to''' this problem?''
-            #: ''I can't remember the password '''to''' this account?''
-            # '''To''' shows a comparison between two things.
-            #: ''Girls outnumber boys two '''to''' one.''
-            #: ''Older cars get fewer kilometers '''to''' a liter of gasoline.''
-            #: ''Right now you can get one Canadian dollar '''to''' $1.05 US.''
-            # '''To''' shows your feeling or opinion about something.
-            #: ''It feels good '''to''' me.''
-            #: '''''To''' their surprise, she got up and left.''
-            # '''To''' shows a timing relationship, often with a music.
-            #: ''He likes to exercise '''to''' music.''
-
-            == Subordinator ==
-            {{subordinator}}
-            # '''To''' is used to introduce infinitival constructions.
-            #: ''It's important for you '''to''' understand.''
-            #: ''She told them '''to''' be quiet.''
-            #: ''You want me '''to''' do it, but I don't have '''to'''.''
-            #: '''''To''' finish quickly, we must work fast.''
-            #: '''''To''' continue like this would be foolish.''
-            #: ''I don't know how '''to''' get there.''
-            #: ''He got the keys '''to''' open the door.''
-            #: ''It's too small '''to''' see.''
-            #: ''You are all '''to''' be here at 7:30 tomorrow morning. Do you understand?''
-            #: ''He arrived only '''to''' find that everyone had gone home.''
-
-            == Verb ==
-            {{verb2|write|writes|wrote|written|writing}}
-            # {{gerund-participle of|write}}
-            #: ''I'm '''writing''' a new book.''
-
-            === See also ===
-            * [[reference]]
-            [[Category:Literature]]</text>
-            <sha1>gr3p7lzn2rgtmz03vhwkzx9y4vb5ezf</sha1>
-        </revision>
-    </page>
-
-    <page>
-        <title>conceivable</title>
-        <ns>0</ns>
-        <id>57909</id>
-        <revision>
-            <id>501881</id>
-            <timestamp>2023-07-01T05:18:42Z</timestamp>
-            <contributor>
-                <username>Minorax</username>
-                <id>27347</id>
-            </contributor>
-            <comment>Created page with &quot;=== Word parts === {{ety-suffix|conceive|able}}  === Pronunciation === * {{IPA|/kənˈsiːvəbl̩/}}  == Adjective == {{adj}} # If something is '''conceivable''', it can be [[conceive]]d or [[imagine]]d. {{syn|imaginable|possible|credible|thinkable}}&quot;</comment>
-            <model>wikitext</model>
-            <format>text/x-wiki</format>
-            <text bytes="250" xml:space="preserve">=== Word parts ===
-            {{ety-suffix|conceive|able}}
-
-            === Pronunciation ===
-            * {{IPA|/kənˈsiːvəbl̩/}}
-
-            == Adjective ==
-            {{adj}}
-            # If something is '''conceivable''', it can be [[conceive]]d or [[imagine]]d. {{syn|imaginable|possible|credible|thinkable}}</text>
-            <sha1>m1qyubyvstajgemrj2ii1nks0dtj31t</sha1>
-        </revision>
-  </page>
-  <page>
-    <title>professed</title>
+    <title>many</title>
     <ns>0</ns>
-    <id>57895</id>
+    <id>3213</id>
     <revision>
-      <id>501853</id>
-      <timestamp>2023-07-01T04:43:03Z</timestamp>
+      <id>493888</id>
+      <parentid>493887</parentid>
+      <timestamp>2023-01-30T01:43:56Z</timestamp>
       <contributor>
-        <username>Minorax</username>
-        <id>27347</id>
+        <username>Victor Bob</username>
+        <id>42043</id>
       </contributor>
-      <comment>Creating past tense and participle from [[profess]] ([[User talk:Conrad.Irwin/creation.js|Accelerated]])</comment>
       <model>wikitext</model>
       <format>text/x-wiki</format>
-      <text bytes="73" xml:space="preserve">== Verb ==
-        {{verb|profess|es}}
-        # {{past tense and participle of|profess}}
-        #: Naber panpaaaaa
-        </text>
-      <sha1>rapalbi10hwe9lvfzlms8mps1k44cb5</sha1>
+      <text bytes="945" xml:space="preserve">{{BNC1000HW}}
+
+===Pronunciation===
+* {{UK}} {{IPA|/ˈmɛni/}}
+* {{US}} {{IPA|/ˈmɛni/}}, {{SAMPA|/&quot;mEni/}}
+* {{audio|en-us-many.ogg|Audio (US)}}
+* {{audio|En-uk-many.ogg|Audio (UK)}}
+
+== Determiner ==
+{{determiner-comp|many|more|most}}
+# {{det|p|c}} A [[large]] [[number]] of (something).
+#:''There are '''many''' people in China.''
+#: ''People are very much animals in '''many''' ways.''
+#: ''How '''many''' times have I walked down this street?''
+#: ''It was so '''many''' years ago that we first met.''
+#: ''There are not '''many''' people like him.''
+#: ''As '''many''' as 30 per cent of the population carries this disease.''
+#: ''In too '''many''' cases, people don't get the care they need.''
+#: ''A great '''many''' questions still have no answers.''
+#: ''Some are good, but not very '''many'''.''
+#: '''''Many''' of our teachers come from other countries.''
+
+== Adjective ==
+{{adj|many|none|none}}
+#: ''The possibilities are '''many'''.''
+</text>
+      <sha1>nxwts08y7e0339pu9k7mztj9o0xpqfw</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>few</title>
+    <ns>0</ns>
+    <id>3214</id>
+    <revision>
+      <id>469076</id>
+      <parentid>468496</parentid>
+      <timestamp>2020-10-17T18:51:00Z</timestamp>
+      <contributor>
+        <username>Brett</username>
+        <id>77</id>
+      </contributor>
+      <comment>/* Determiner */</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="479" xml:space="preserve">{{BNC1000HW}}
+
+===Pronunciation===
+* {{IPA|/fjuː/}}
+* {{SAMPA|/fju:/}}
+* {{audio|en-us-few.ogg|Audio (US)}}
+* {{audio|En-uk-few.ogg|Audio (UK)}}
+
+== Determiner ==
+{{determiner-comp|few|fewer|fewest}}
+# {{det|p|c}} '''Few''' things are not many things.. 
+#: very '''few''' problems are as big as this.
+#:''There are so '''few''' good books.''
+#:''I can't believe how '''few''' people are here.''
+#:''There are so many problems and '''few''' are easy.''
+
+
+===See also===
+* [[a few]]</text>
+      <sha1>sqjoe8q03cj2n1g2rxz0beegz0c2mg7</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>much</title>
+    <ns>0</ns>
+    <id>3215</id>
+    <revision>
+      <id>496942</id>
+      <parentid>476803</parentid>
+      <timestamp>2023-05-19T19:35:19Z</timestamp>
+      <contributor>
+        <username>OmegaFallon</username>
+        <id>44439</id>
+      </contributor>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text bytes="1098" xml:space="preserve">{{BE850}}
+{{BNC1000HW}}
+
+===Pronunciation===
+* {{IPA|/mʌt​͡ʃ/}}
+* {{SAMPA|/mVtS/}}
+* {{audio|en-us-much.ogg|Audio (US)}}
+
+== Determiner ==
+{{determiner-comp|much|more|most}}
+# {{det|s|n}} '''Much''' is a lot of; a large [[amount]] of; a high [[degree]]
+#: ''I don't have '''much''' [[money]].''
+#: ''I don't like the cider very '''much'''.''
+#: ''I know how '''much''' he loves everybody in the house.''
+#: ''You're not '''much''' better than he is.''
+#: ''She was '''much''' more fun after a few drinks.''
+#: ''This is almost as '''much''' fun as last week.''
+#: ''We bought another one, but the cost was '''much''' greater.''  
+#: ''I don't think it matters '''much''' what you study.''
+#: ''Thank you very '''much'''!''
+#: '''''Much''' attention has been given to the question of where the money should go.''
+#: ''He's very '''much''' the Englishman.''
+=== Usage ===
+''Much'' can [[modify]] verbs, but only in passive voice:
+* ''It was '''much''' improved after five days.''
+* ''The teacher was '''much''' criticized by the students.''
+* ''This type was '''much''' used before World War II.''</text>
+      <sha1>2tpxjicjzw2i72ktrzzf3qk2j3fjnel</sha1>
     </revision>
   </page>
 </mediawiki>

@@ -66,11 +66,20 @@ dictionary["words"][0]["definitions"].appned({})
 import xml.etree.ElementTree as ET
 import re
 
+def specialCase(index: int, firsItem, dictionary: str):
+   if index == 1:
+       parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", firsItem) #regex parse
+       dictionary["words"][-1]["definitions"][-1]["properties"].append({})
+       dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"] = []
+       dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
+       
+
 def sectionParse(value, word: str, dictionary: str, sectionName: str):
     print("f sectionParse fonksiyonumuz açıldıı. kelimemiz:" + word)
     section_name = "== " + sectionName + " =="
     value = value + "\n\n"
     if section_name in value:
+        index = 0
         dictionary["words"][-1]["definitions"].append({})
         dictionary["words"][-1]["definitions"][-1]["partOfSpeech"] = sectionName
         dictionary["words"][-1]["definitions"][-1]["properties"] = []
@@ -81,11 +90,15 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
         items = prepositionSectionItemsPattern.findall(prepositionText)
         #print(items)
         for i in items:
+            index = index + 1
             if "#:" in i:
-                print("bakılan", i)
-                parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parse
-                print("parsed text:", parsedText)
-                dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
+                if index == 1:
+                    specialCase(index, i, dictionary)
+                else:
+                    print("bakılan", i)
+                    parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parse
+                    print("parsed text:", parsedText)
+                    dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
             else:
                 #definition kısmına ekle çıkan şeyi
                 """ 
@@ -103,13 +116,14 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
                 dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"] = []
 
         
+        
 
 
 
     else:
         print("nor founds {} in words".format(sectionName)) 
 
-with open('simplewiktionary-20230701-pages-articles-multistream.xml', 'r',  encoding='utf-8') as file:
+with open('dic.xml', 'r',  encoding='utf-8') as file:
     xml_data = file.read()
 
 # XML metnini ayrıştırma
@@ -133,6 +147,9 @@ for i in textElements:
     sectionParse(text, word, dictionary, "Verb")
     sectionParse(text, word, dictionary, "Determiner")
     sectionParse(text, word, dictionary, "Adjective")
+    sectionParse(text, word, dictionary, "Interjection")
+    sectionParse(text, word, dictionary, "Symbol")
+    
 
 print(dictionary)
 
