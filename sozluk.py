@@ -81,9 +81,10 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
         items = prepositionSectionItemsPattern.findall(prepositionText)
         #print(items)
         for i in items:
-            if ":" in i:
-                #print("var", i)
+            if "#:" in i:
+                print("bakılan", i)
                 parsedText = re.sub(r"#: |''(.*?)''|#", r"\1", i) #regex parse
+                print("parsed text:", parsedText)
                 dictionary["words"][-1]["definitions"][-1]["properties"][-1]["sentences"].append(parsedText)
             else:
                 #definition kısmına ekle çıkan şeyi
