@@ -149,7 +149,15 @@ for i in textElements:
     sectionParse(text, word, dictionary, "Adjective")
     sectionParse(text, word, dictionary, "Interjection")
     sectionParse(text, word, dictionary, "Symbol")
+
     sectionParse(text, word, dictionary, "Expression")
+    sectionParse(text, word, dictionary, "Proper noun")
+    sectionParse(text, word, dictionary, "Abbreviation")
+    sectionParse(text, word, dictionary, "Adverbs")
+    
+    
+
+    
     
     
 
