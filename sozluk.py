@@ -60,18 +60,18 @@ for i in sentences:
 
 if "== Preposition ==" in text:
 
-wordMeaning["words"][0]["definitions"].appned({})
+dictionary["words"][0]["definitions"].appned({})
 """ 
 
 import xml.etree.ElementTree as ET
 import re
 
-def sectionParse(value, word: str, wordMeaning: str, sectionName: str):
+def sectionParse(value, word: str, dictionary: str, sectionName: str):
     section_name = "== " + sectionName + " =="
     if section_name in value:
-        wordMeaning["words"][0]["definitions"].append({})
-        wordMeaning["words"][0]["definitions"][-1]["partOfSpeech"] = sectionName
-        wordMeaning["words"][0]["definitions"][-1]["properties"] = []
+        dictionary["words"][0]["definitions"].append({})
+        dictionary["words"][0]["definitions"][-1]["partOfSpeech"] = sectionName
+        dictionary["words"][0]["definitions"][-1]["properties"] = []
         print("found {} in words".format(sectionName)) 
         prepositionSectionPattern = re.compile(f'== {sectionName} ==(.+?)\n\n', re.DOTALL)
         prepositionText = prepositionSectionPattern.search(value).group(1)
@@ -81,7 +81,7 @@ def sectionParse(value, word: str, wordMeaning: str, sectionName: str):
         for i in items:
             if ":" in i:
                 #print("var", i)
-                wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(i)
+                dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"].append(i)
             else:
                 #definition kısmına ekle çıkan şeyi
                 """ 
@@ -93,9 +93,9 @@ def sectionParse(value, word: str, wordMeaning: str, sectionName: str):
 
                 """ 
                 #print("yok", i)
-                wordMeaning["words"][0]["definitions"][-1]["properties"].append({})
-                wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["definition"] = i
-                wordMeaning["words"][0]["definitions"][-1]["properties"][-1]["sentences"] = []
+                dictionary["words"][0]["definitions"][-1]["properties"].append({})
+                dictionary["words"][0]["definitions"][-1]["properties"][-1]["definition"] = i
+                dictionary["words"][0]["definitions"][-1]["properties"][-1]["sentences"] = []
 
         
 
@@ -111,31 +111,26 @@ with open('dic.xml', 'r') as file:
 tree = ET.ElementTree(ET.fromstring(xml_data))
 root = tree.getroot()
 
-wordMeaning = {}
+dictionary = {}
 
 word = root.find('title').text
 text = root.find('.//text').text
 
-wordMeaning["words"] = []
-wordMeaning["words"].append({})
+dictionary["words"] = []
+dictionary["words"].append({})
 
-wordMeaning["words"][0]["word"] = word
-wordMeaning["words"][0]["definitions"]=[]
+dictionary["words"][0]["word"] = word
+dictionary["words"][0]["definitions"]=[]
 
-# 'Noun' bölümünü
-prepositionSectionPattern =  re.compile(r'== Preposition ==(.+?)\n\n', re.DOTALL)
-definitionPattern = re.compile(r'#(.+?)\n', re.DOTALL)
-sentencesPattern = re.compile(r'#:(.+?)\n', re.DOTALL)
-definition = definitionPattern.search(text).group(1)
-sentences = sentencesPattern.findall(text)
-prepositionSection = prepositionSectionPattern.search(text).group(1)
 
-sectionParse(text, word, wordMeaning, "Preposition")
-sectionParse(text, word, wordMeaning, "Noun")
-sectionParse(text, word, wordMeaning, "Subordinator")
-sectionParse(text, word, wordMeaning, "Verb")
+sectionParse(text, word, dictionary, "Preposition")
+sectionParse(text, word, dictionary, "Noun")
+sectionParse(text, word, dictionary, "Subordinator")
+sectionParse(text, word, dictionary, "Verb")
+sectionParse(text, word, dictionary, "Determiner")
+sectionParse(text, word, dictionary, "Adjective")
 
-print(wordMeaning)
+print(dictionary)
 
 
 
