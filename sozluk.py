@@ -142,8 +142,6 @@ for i in textElements:
     dictionary["words"][-1]["definitions"]=[]
     sectionParse(text, word, dictionary, "Determiner")
     sectionParse(text, word, dictionary, "Adjective")
-    
-'''
     sectionParse(text, word, dictionary, "Preposition")
     sectionParse(text, word, dictionary, "Noun")
     sectionParse(text, word, dictionary, "Subordinator")
@@ -158,6 +156,9 @@ for i in textElements:
     sectionParse(text, word, dictionary, "Abbreviation")
     sectionParse(text, word, dictionary, "Adverbs") 
     sectionParse(text, word, dictionary, "Adverb") 
+    
+'''
+
 '''
     
 
