@@ -123,7 +123,7 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
     else:
         print("nor founds {} in words".format(sectionName)) 
 
-with open('dic.xml', 'r',  encoding='utf-8') as file:
+with open('simplewiktionary-20230701-pages-articles-multistream.xml', 'r',  encoding='utf-8') as file:
     xml_data = file.read()
 
 # XML metnini ayrıştırma
@@ -135,33 +135,42 @@ dictionary["words"] = []
 textElements = root.findall('.//page')
 print(len(textElements))
 for i in textElements:
-    word = i.find('title').text
     text = i.find('.//text').text
-    dictionary["words"].append({})
-    dictionary["words"][-1]["word"] = word
-    dictionary["words"][-1]["definitions"]=[]
-    sectionParse(text, word, dictionary, "Determiner")
-    sectionParse(text, word, dictionary, "Adjective")
-    sectionParse(text, word, dictionary, "Preposition")
-    sectionParse(text, word, dictionary, "Noun")
-    sectionParse(text, word, dictionary, "Subordinator")
-    sectionParse(text, word, dictionary, "Verb")
-    sectionParse(text, word, dictionary, "Determiner")
-    sectionParse(text, word, dictionary, "Adjective")
-    sectionParse(text, word, dictionary, "Interjection")
-    sectionParse(text, word, dictionary, "Symbol")
+    word = i.find('title').text
+    if text is not None:
+            # bazı sayfalarda kelime yok. themplate gibi şeyler var.
+    # eğer text elemetinin içinde Determiner, Adjective yoksa pass geçsin
+        if ("== Determiner ==" in text or "== Adjective ==" in text or "== Preposition ==" in text or "== Noun ==" in text
+            or "== Subordinator ==" in text or "== Verb ==" in text or "== Interjection ==" in text or "== Symbol ==" in text
+            or "== Expression ==" in text or "== Proper noun ==" in text or "== Abbreviation ==" in text or "== Adverbs ==" in text 
+            or "== Adverb ==" in text):
+            print("kelime yok.", word)    
+            dictionary["words"].append({})
+            dictionary["words"][-1]["word"] = word
+            dictionary["words"][-1]["definitions"]=[]
+            sectionParse(text, word, dictionary, "Determiner")
+            sectionParse(text, word, dictionary, "Adjective")
+            sectionParse(text, word, dictionary, "Preposition")
+            sectionParse(text, word, dictionary, "Noun")
+            sectionParse(text, word, dictionary, "Subordinator")
+            sectionParse(text, word, dictionary, "Verb")
+            sectionParse(text, word, dictionary, "Interjection")
+            sectionParse(text, word, dictionary, "Symbol")
 
-    sectionParse(text, word, dictionary, "Expression")
-    sectionParse(text, word, dictionary, "Proper noun")
-    sectionParse(text, word, dictionary, "Abbreviation")
-    sectionParse(text, word, dictionary, "Adverbs") 
-    sectionParse(text, word, dictionary, "Adverb") 
+            sectionParse(text, word, dictionary, "Expression")
+            sectionParse(text, word, dictionary, "Proper noun")
+            sectionParse(text, word, dictionary, "Abbreviation")
+            sectionParse(text, word, dictionary, "Adverbs") 
+            sectionParse(text, word, dictionary, "Adverb") 
     
 '''
 
 '''
+file_path = r"C:/Users/Mustafa Yüksel/Desktop/metin.txt"
+with open(file_path, "w", encoding="utf-8") as file:
     
-
+    # Metni dosyaya yaz
+    file.write("{}".format(dictionary))
 
 
 print(dictionary)
