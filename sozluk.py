@@ -123,7 +123,7 @@ def sectionParse(value, word: str, dictionary: str, sectionName: str):
     else:
         print("nor founds {} in words".format(sectionName)) 
 
-with open('simplewiktionary-20230701-pages-articles-multistream.xml', 'r',  encoding='utf-8') as file:
+with open('dic.xml', 'r',  encoding='utf-8') as file:
     xml_data = file.read()
 
 # XML metnini ayrıştırma
@@ -140,7 +140,10 @@ for i in textElements:
     dictionary["words"].append({})
     dictionary["words"][-1]["word"] = word
     dictionary["words"][-1]["definitions"]=[]
-
+    sectionParse(text, word, dictionary, "Determiner")
+    sectionParse(text, word, dictionary, "Adjective")
+    
+'''
     sectionParse(text, word, dictionary, "Preposition")
     sectionParse(text, word, dictionary, "Noun")
     sectionParse(text, word, dictionary, "Subordinator")
@@ -153,7 +156,11 @@ for i in textElements:
     sectionParse(text, word, dictionary, "Expression")
     sectionParse(text, word, dictionary, "Proper noun")
     sectionParse(text, word, dictionary, "Abbreviation")
-    sectionParse(text, word, dictionary, "Adverbs")
+    sectionParse(text, word, dictionary, "Adverbs") 
+    sectionParse(text, word, dictionary, "Adverb") 
+'''
+    
+
 
 
 print(dictionary)
