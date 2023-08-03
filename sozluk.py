@@ -154,12 +154,7 @@ for i in textElements:
     sectionParse(text, word, dictionary, "Proper noun")
     sectionParse(text, word, dictionary, "Abbreviation")
     sectionParse(text, word, dictionary, "Adverbs")
-    
-    
 
-    
-    
-    
 
 print(dictionary)
 
